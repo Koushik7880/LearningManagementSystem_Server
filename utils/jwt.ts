@@ -19,8 +19,10 @@ export const sendToken = (user: IUser, statusCode: number, res: Response) => {
 
   //  parse environment variable to integrates with fallback values
 
-  const accessTokenExpires = parseInt(
-    process.removeListener.ACCESS_TOKEN_EXPIRE || '300',
-    10
-  )
+  // const accessTokenExpires = parseInt(
+  //   process.removeListener.ACCESS_TOKEN_EXPIRE || '300',
+  //   10
+  // )
+
+  // const refreshTokenExpires = parseInt(
 }
