@@ -1,0 +1,218 @@
+http://localhost:8000/api/v1/registration   (POST)
+
+{
+    "name":"Koushik Das",
+    "email":"koushik78bd@gmail.com",
+    "password":"12345678"
+}
+
+http://localhost:8000/api/v1/activate-user  (POST)
+
+{
+    "activation_code":"3665",
+    "activation_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJLb3VzaGlrIERhcyIsImVtYWlsIjoia291c2hpazc4YmRAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCJ9LCJhY3RpdmF0aW9uQ29kZSI6IjM2NjUiLCJpYXQiOjE3MjMyODQyODIsImV4cCI6MTcyMzI4NDU4Mn0.3FDwjs2ymEpCjXeX3p8N2NvKj4PDT5QJmsJPGdqFccI"
+}
+
+http://localhost:8000/api/v1/login  (POST)
+
+{
+    "email":"koushik78bd@gmail.com",
+    "password":"12345678"
+}
+
+http://localhost:8000/api/v1/logout     (GET)
+
+http://localhost:8000/api/v1/refresh    (GET)
+
+http://localhost:8000/api/v1/me         (GET)
+
+http://localhost:8000/api/v1/social-auth    (POST)
+
+http://localhost:8000/api/v1/update-user-info  (PUT)
+
+http://localhost:8000/api/v1/update-user-password   (PUT)
+{
+    "oldPassword":"00000000",
+    "newPassword":"12345678"
+}
+
+http://localhost:8000/api/v1/update-user-avatar     (PUT)
+
+{
+    "avatar":"base64imagelink"
+}
+
+
+
+
+
+
+
+
+
+
+
+ALL Course related APIS
+// create course
+
+http://localhost:8000/api/v1//create-course     (POST)
+
+
+{
+    "name":"MERN Stake LMS / Learning management system with next13",
+    "discription":"Welcome to the MERN stack Multi Vendor Ecommerce startup series. In this series, you will learn how to build a startup project with the power of MERN and other latest technologies like tailwind CSS, socket io, redux tooklit, etc. This is a free MERN Stack Startup series that you will not find on youtube or Udamy right now.",
+    "price": 29,
+    "estimatedPrice":80,
+    "tags":"MERN, LMS, next13, typescritp, nodejs, redis",
+    "level":"Intermediate",
+    "demoUrl":"hgag231",
+    "benefits":[
+        {
+            "title": "You will be able to build a full stack multivendor Ecommerce website"
+        },
+        {
+            "title": "You will learn the best practices of MERN stack"
+        },
+        {
+            "title": "You will learn how to build a chatting app with the power of socket it and MERN stack"
+        }
+    ],
+    "prerequisites":[
+        {
+            "title": "You need basic knowledge of MERN stack"
+        },
+        {
+            "title": "You need to complete any simple MERN project before"
+        },
+        {
+            "title": "You need knowledge of full stack like how to create backend server how it's work and how to connect the fontend"
+        }
+    ],
+    "courseData":[
+        {
+            "videourl":"hydr14f",
+            "title":"Project folder stracture setup",
+            "videoSection":"Planing and Project Stracture",
+            "discription":"Welcome to the MERN stack Multi Vendor Ecommerce startup series. In this series, you will learn how to build a startup project with the power of MERN and other latest technologies like tailwind CSS, socket io, redux tooklit, etc. This is a free MERN Stack Startup series that you will not find on youtube or Udamy right now.",
+            "videoLength":12,
+            "links":[
+                {
+                    "title":"Source Code",
+                    "url":"http://github.com/koushik78bd"
+                }
+            ]
+        }
+    ]
+
+}
+
+// update course
+
+http://localhost:8000/api/v1/edit-course/66c2cada9b41e9e55ce5d2fc    (PUT)
+
+
+{
+    "name": "MERN Stake",
+    "description": "Welcome to the MERN stack Multi Vendor Ecommerce startup series...",
+    "price": 29,
+    "estimatedPrice": 80,
+    "tags": "MERN, LMS, next13, typescript, nodejs, redis",
+    "level": "Intermediate",
+    "demoUrl": "hgag231",
+    "benefits": [
+        { "title": "You will be able to build a full stack multivendor Ecommerce website" },
+        { "title": "You will learn the best practices of MERN stack" },
+        { "title": "You will learn how to build a chatting app with the power of socket io and MERN stack" }
+    ],
+    "prerequisites": [
+        { "title": "You need basic knowledge of MERN stack" },
+        { "title": "You need to complete any simple MERN project before" },
+        { "title": "You need knowledge of full stack like how to create backend server, how it works, and how to connect the frontend" }
+    ],
+    "courseData": [
+        {
+            "videoUrl": "hydr14f",
+            "title": "Project folder structure setup",
+            "videoSection": "Planning and Project Structure",
+            "description": "Welcome to the MERN stack Multi Vendor Ecommerce startup series...",
+            "videoLength": 12,
+            "links": [
+                { "title": "Source Code", "url": "http://github.com/koushik78bd" }
+            ]
+        }
+    ]
+}
+
+
+// get single course data without purchase
+
+http://localhost:8000/api/v1/get-course/66c2cada9b41e9e55ce5d2fc     (GET)
+
+
+// get all course data without purchase
+http://localhost:8000/api/v1/get-courses            (GET)
+
+
+// get course content -- only for valid user
+http://localhost:8000/api/v1/get-course-content/66c2cada9b41e9e55ce5d2fc    (get)
+
+
+// add question to a course
+http://localhost:8000/api/v1/add-question                   (PUT)
+
+{
+    "question":"It's a testing question part 2",
+    "courseId":"66c2cada9b41e9e55ce5d2fc",
+    "contentId":"66c314c63cf89cdfb6c7e608"
+}
+
+
+http://localhost:8000/api/v1/add-answer      (PUT)
+
+
+{
+    "answer":"It's a testing answer 4",
+    "courseId":"66c2cada9b41e9e55ce5d2fc",
+    "contentId":"66c314c63cf89cdfb6c7e608",
+    "questionId":"66c5c34eedc2832ea51b6ec5"
+}
+
+http://localhost:8000/api/v1/add-review/66c2cada9b41e9e55ce5d2fc        (PUT)
+
+{
+   "review":"It's cool",
+   "rating":5 
+}
+
+http://localhost:8000/api/v1/add-reply                      (PUT) add review relply only by admin
+{
+    "comment":"Thank you for your review",
+    "courseId":"66c2cada9b41e9e55ce5d2fc",
+    "reviewId":"66cac22caddac3e8d60fca76"
+   
+}
+
+http://localhost:8000/api/v1/create-order
+
+{
+    "courseId":"66c2cada9b41e9e55ce5d2fc"
+}
+
+http://localhost:8000/api/v1/get-all-notifications      (get)
+
+
+
+
+http://localhost:8000/api/v1/update-user    (PUT) user role update
+
+{
+    "id":"66b73b9d5d4360a8a55c370e",
+    "role":"modaretor"
+}
+
+
+
+http://localhost:8000/api/v1/delete-user/66bc51b62267d5cdc23ba18d       (DELETE)    delete user only for admin
+
+
+http://localhost:8000/api/v1/delete-course/66d5619c5a79a8831baf0a97     (DELETE)    delete course only for admin
